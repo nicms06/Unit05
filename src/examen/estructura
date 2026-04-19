@@ -1,0 +1,142 @@
+--------------------------------------------
+Abstract Dispositivo implements Comparable |
+--------------------------------------------
+# nombreComercial : String                 |
+# marca : String                           |
+# precio : double                          |
+# indicadorEncendido : boolean             |
+# final INDICARDOR_PRED : false
+--------------------------------------------
++ Dispositivo(nombre: String, marca: String,
+      precio: double)
++ encender() : void
++ apagar() : void
++ isEncendido() : boolean
++ String toString()                        |
++ int compareTo(Object objeto)             |
++ boolean equals(Object objeto)            |
+--------------------------------------------
+
+-------------------------------
+Configurable <<interface >>   |
+-------------------------------
++ subir(): void               |
++ bajar(): void               |
+-------------------------------
+
+---------------------------------
+EmitirAlerta <<interface>>      |
+---------------------------------
++ activar(mensaje:String): void |
++ desactivar(): void            |
++ isAlertaActiva(): boolean     |
+---------------------------------
+
+----------------------------------
+DispositivoApagadoExepction      |
+----------------------------------
++ DispositivoApagadoException()  |
+----------------------------------
+
+--------------------------------------------------------------
+public Altavoz extends Dispositivo implements Configurable   |
+--------------------------------------------------------------
+- nombreAsistente : String                |
+- nivelVolumen : int                      |
+- final VOLUMEN_PREDETERMINADO = int 30   |
+- final MIN_VOLUMEN = int 0               |
+- final MAX_VOLUMEN = int 100             |
+- final INCREMENTO = int 5                |
+-------------------------------------------
++ Altavoz (nombre : String, marca: String,|
+    precio: double, asistente : String)   |
++ setNivelVolumen(int nivel) : void       |
++ subir(): void                           |
++ bajar(): void                           |
++ toString(): String                      |
+-------------------------------------------
+
+----------------------------------------------------------
+public Luz extends Dispositivo implements Configurable   |
+----------------------------------------------------------
+- Color: String                           |
+- Brillo: int                             |
+- final BRILLO_PREDETERMINADO = int 50    |
+- final BRILLO_MIN = int 0                |
+- final BRILLO_MAX = int 100              |
+- final INCREMENTO = 10                   |
+-------------------------------------------
++ Luz (nombre : String, marca: String,    |
+          precio: double, Color : String) |
++ setNivelBrillo(int nivel): void         |
++ subir(): void                           |
++ bajar(): void                           |
++ toString(): String                      |
+-------------------------------------------
+
+----------------------------------------------------------------
+public Termostato extends Dispositivo implements EmitirAlerta  |
+----------------------------------------------------------------
+- temperaturaObjetivo: double                   |
+- modoFuncionamiento: String                    |
+- alertaActiva: boolean                         |
+- mensajeAlerta: String                         |
+-------------------------------------------------
++ Termostato(nombre: String, marca: String,     |
+        precio: double, temperatura: double     |
++ cambiarModo(): void                           |
++ activar(mensaje:String): void                 |
++ desactivar(): void                            |
++ isAlertaActiva(): boolean                     |
++ toString: String                              |
+-------------------------------------------------
+
+----------------------------------------------------------------
+public Camara extends Dispositivo implements EmitirAlerta
+----------------------------------------------------------------
+- resolucion: double
+- estaGrabando: boolean
+- alertaActiva: boolean
+- mensajeAlerta: String
+----------------------------------------------------------------
++ Camara(nombre: String, marca: String,
+          precio: double, res: String)
++ inicarGrabacion(): void
++ detenerGrabacion(): void
++ activar(mensaje String): void
++ desactivar(): void
++ isAlertaActiva(): boolean
++ toString(): String
+----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
